@@ -3,7 +3,11 @@ import api from '../../services/api';
 
 import './styles.css';
 
-function Login(): JSX.Element {
+type LoginProps = {
+  setLogged: (value: any) => void;
+};
+
+function Login({ setLogged }: LoginProps): JSX.Element {
   const [qrcode, setQrcode] = useState('');
   const [secret, setSecret] = useState('');
   const [token, setToken] = useState('');
@@ -29,6 +33,7 @@ function Login(): JSX.Element {
       token,
     });
     setValidToken(response.data.token_is_valid);
+    setLogged(response.data.token_is_valid);
   };
 
   return (

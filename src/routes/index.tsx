@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Login, Home } from '../pages';
 
 import './routes.css';
 
 function Routes(): JSX.Element {
-  const user = false;
-  if (user) {
+  const [logged, setLoged] = useState(false);
+  if (logged) {
     return <Home />;
   }
 
-  return <Login />;
+  return <Login setLogged={setLoged} />;
 }
 
 export default Routes;
