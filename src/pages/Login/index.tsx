@@ -5,11 +5,12 @@ import './styles.css';
 
 type LoginProps = {
   setLogged: (value: any) => void;
+  setSecret: (value: any) => void;
 };
 
-function Login({ setLogged }: LoginProps): JSX.Element {
+function Login({ setLogged, setSecret }: LoginProps): JSX.Element {
   const [qrcode, setQrcode] = useState('');
-  const [secret, setSecret] = useState('');
+  const [secret, setSecretIntern] = useState('');
   const [token, setToken] = useState('');
   const [validToken, setValidToken] = useState(false);
 
@@ -17,6 +18,7 @@ function Login({ setLogged }: LoginProps): JSX.Element {
     try {
       const response = await api.get('/get_secret');
       setSecret(response.data.secret.ascii);
+      setSecretIntern(response.data.secret.ascii);
 
       const response2 = await api.post('/generate_qr_code', {
         secret: response.data.secret,

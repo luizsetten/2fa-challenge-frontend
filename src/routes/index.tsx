@@ -6,11 +6,12 @@ import './routes.css';
 
 function Routes(): JSX.Element {
   const [logged, setLoged] = useState(false);
+  const [secret, setSecret] = useState('');
   if (logged) {
-    return <Home />;
+    return <Home secret={secret} />;
   }
 
-  return <Login setLogged={setLoged} />;
+  return <Login setLogged={setLoged} setSecret={setSecret} />;
 }
 
 export default Routes;
