@@ -8,3 +8,41 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.login-info {
+  display: flex;
+  margin: 3rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.verify-form {
+  display: flex;
+  margin: 3rem;
+  align-items: center;
+}
+
+button {
+  padding: 0.3rem 0.5rem;
+  border-color: #282c34;
+  color: #fff;
+  border-radius: 8px;
+  font-size: large;
+}
+
+button,
+button:active {
+  background-color: #46205e;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #d55615;
+  transition: 0.3s;
+}
+
+input {
+  padding: 0.3rem 0.5rem;
+  margin: 0 0.5rem;
+}
