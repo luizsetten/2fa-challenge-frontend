@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Login(): JSX.Element {
+function Home(): JSX.Element {
   return (
     <div className="container">
       <p>Olá usuário</p>
@@ -8,4 +8,4 @@ function Login(): JSX.Element {
   );
 }
 
-export default Login;
+export default Home;
